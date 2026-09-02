@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Legends - Mini App</title>
+  <!-- Telegram Web App SDK -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome piktogrammalari -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { background-color: #0b0e19; color: white; font-family: sans-serif; }
+    /* Scrollbar yashirish */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="p-4 pb-28 max-w-md mx-auto relative min-h-screen select-none">
+
+  <!-- Yuqori qism (Orqaga tugmasi) -->
+  <div class="flex items-center justify-between mb-4">
+    <button class="flex items-center gap-1.5 bg-[#151c2e] px-3 py-1.5 rounded-full text-sm font-medium border border-gray-800">
+      <i class="fa-solid fa-arrow-left text-xs"></i>
+      <span>Orqaga</span>
+    </button>
+  </div>
+
+  <!-- O'yin Banner Card -->
+  <div class="bg-[#131929] rounded-2xl p-3 border border-gray-800/80 flex items-center gap-3 mb-5">
+    <div class="w-12 h-12 rounded-xl overflow-hidden border border-blue-500/50 shrink-0">
+      <img src="https://via.placeholder.com/60" alt="Mobile Legends" class="w-full h-full object-cover">
+    </div>
+    <div class="flex items-center gap-1.5">
+      <h2 class="font-bold text-base tracking-wide">MOBILE LEGENDS</h2>
+      <i class="fa-solid fa-gem text-cyan-400 text-xs"></i>
+    </div>
+  </div>
+
+  <!-- Inputlar: O'yinchi ID va Server ID -->
+  <div class="space-y-3 mb-5">
+    <div>
+      <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1 block px-1">O'yinchi ID</span>
+      <div class="relative">
+        <input 
+          type="text" 
+          placeholder="O'yinchi ID kiriting" 
+          class="w-full bg-[#131929] border border-gray-800 rounded-xl py-2.5 px-3.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-blue-600 transition"
+        >
+        <i class="fa-regular fa-circle-question absolute right-3 top-3 text-gray-500 text-xs"></i>
+      </div>
+    </div>
+
+    <div>
+      <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1 block px-1">Server ID</span>
+      <div class="flex gap-2">
+        <div class="relative flex-1">
+          <input 
+            type="text" 
+            placeholder="Server ID kiriting" 
+            class="w-full bg-[#131929] border border-gray-800 rounded-xl py-2.5 px-3.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-blue-600 transition"
+          >
+          <i class="fa-regular fa-circle-question absolute right-3 top-3 text-gray-500 text-xs"></i>
+        </div>
+        <button class="bg-[#1e295d] hover:bg-blue-700 text-blue-200 text-xs font-semibold px-4 py-2.5 rounded-xl transition">
+          Tekshirish
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sarlavha va Hudud Filtrlar (UZB, PH, RU...) -->
+  <div class="mb-4">
+    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2 block px-1">Mahsulotni tanlang</span>
+    <div class="flex gap-1.5 overflow-x-auto no-scrollbar">
+      <button class="bg-[#1d4ed8] text-white px-3 py-1 rounded-full text-[11px] font-semibold whitespace-nowrap flex items-center gap-1 border border-blue-400/30">
+        <span>🇺🇿 UZB / 🌐 Global</span>
+      </button>
+      <button class="bg-[#131929] text-gray-400 border border-gray-800 px-3 py-1 rounded-full text-[11px] font-semibold whitespace-nowrap flex items-center gap-1">
+        <span>🇵🇭 PH</span>
+      </button>
+      <button class="bg-[#131929] text-gray-400 border border-gray-800 px-3 py-1 rounded-full text-[11px] font-semibold whitespace-nowrap flex items-center gap-1">
+        <span>🇷🇺 RU</span>
+      </button>
+      <button class="bg-[#131929] text-gray-400 border border-gray-800 px-3 py-1 rounded-full text-[11px] font-semibold whitespace-nowrap flex items-center gap-1">
+        <span>🇹🇷 TR</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mahsulotlar Ro'yxati Grid (2 ustun) -->
+  <div class="grid grid-cols-2 gap-2.5 mb-20">
+
+    <!-- 55 almaz -->
+    <div class="bg-[#131929] border border-amber-500/40 rounded-2xl p-2.5 relative flex items-center gap-2 cursor-pointer hover:border-amber-400 transition">
+      <span class="bg-amber-500 text-black text-[9px] font-black px-1.5 rounded-br-lg rounded-tl-xl absolute top-0 left-0">HIT</span>
+      <div class="w-10 h-10 flex items-center justify-center shrink-0">
+        <i class="fa-solid fa-gem text-cyan-400 text-2xl"></i>
+      </div>
+      <div>
+        <div class="text-xs font-bold flex items-center gap-1">
+          <span class="text-amber-400 text-[10px] font-extrabold">x2</span> 55 <i class="fa-solid fa-gem text-cyan-400 text-[10px]"></i>
+        </div>
+        <div class="text-[11px] font-bold text-amber-400 mt-0.5">11 300 so'm</div>
+      </div>
+    </div>
+
+    <!-- 165 almaz -->
+    <div class="bg-[#131929] border border-amber-500/40 rounded-2xl p-2.5 relative flex items-center gap-2 cursor-pointer hover:border-amber-400 transition">
+      <span class="bg-amber-500 text-black text-[9px] font-black px-1.5 rounded-br-lg rounded-tl-xl absolute top-0 left-0">HIT</span>
+      <div class="w-10 h-10 flex items-center justify-center shrink-0">
+        <i class="fa-solid fa-gem text-cyan-400 text-2xl"></i>
+      </div>
+      <div>
+        <div class="text-xs font-bold flex items-center gap-1">
+          <span class="text-amber-400 text-[10px] font-extrabold">x2</span> 165 <i class="fa-solid fa-gem text-cyan-400 text-[10px]"></i>
+        </div>
+        <div class="text-[11px] font-bold text-amber-400 mt-0.5">33 000 so'm</div>
+      </div>
+    </div>
+
+    <!-- 275 almaz -->
+    <div class="bg-[#131929] border border-amber-500/40 rounded-2xl p-2.5 relative flex items-center gap-2 cursor-pointer hover:border-amber-400 transition">
+      <span class="bg-amber-500 text-black text-[9px] font-black px-1.5 rounded-br-lg rounded-tl-xl absolute top-0 left-0">HIT</span>
+      <div class="w-10 h-10 flex items-center justify-center shrink-0">
+        <i class="fa-solid fa-gem text-cyan-400 text-2xl"></i>
+      </div>
+      <div>
+        <div class="text-xs font-bold flex items-center gap-1">
+          <span class="text-amber-400 text-[10px] font-extrabold">x2</span> 275 <i class="fa-solid fa-gem text-cyan-400 text-[10px]"></i>
+        </div>
+        <div class="text-[11px] font-bold text-amber-400 mt-0.5">51 500 so'm</div>
+      </div>
+    </div>
+
+    <!-- 565 almaz -->
+    <div class="bg-[#131929] border border-amber-500/40 rounded-2xl p-2.5 relative flex items-center gap-2 cursor-pointer hover:border-amber-400 transition">
+      <span class="bg-amber-500 text-black text-[9px] font-black px-1.5 rounded-br-lg rounded-tl-xl absolute top-0 left-0">HIT</span>
+      <div class="w-10 h-10 flex items-center justify-center shrink-0">
+        <i class="fa-solid fa-gem text-cyan-400 text-2xl"></i>
+      </div>
+      <div>
+        <div class="text-xs font-bold flex items-center gap-1">
+          <span class="text-amber-400 text-[10px] font-extrabold">x2</span> 565 <i class="fa-solid fa-gem text-cyan-400 text-[10px]"></i>
+        </div>
+        <div class="text-[11px] font-bold text-amber-400 mt-0.5">103 500 so'm</div>
+      </div>
+    </div>
+
+    <!-- Haftalik propusk -->
+    <div class="bg-[#131929] border border-gray-800/80 rounded-2xl p-2.5 flex items-center gap-2 cursor-pointer hover:border-blue-500 transition">
+      <div class="w-10 h-10 flex items-center justify-center shrink-0">
+        <i class="fa-solid fa-box-open text-purple-400 text-2xl"></i>
+      </div>
+      <div>
+        <div class="text-xs font-bold truncate">Haftalik pro...</div>
+        <div class="text-[11px] font-semibold text-blue-400 mt-0.5">24 000 so'm</div>
+      </div>
+    </div>
+
+    <!-- Sumerechni propusk -->
+    <div class="bg-[#131929] border border-gray-800/80 rounded-2xl p-2.5 flex items-center gap-2 cursor-pointer hover:border-blue-500 transition">
+      <div class="w-10 h-10 flex items-center justify-center shrink-0">
+        <i class="fa-solid fa-shield-halved text-indigo-400 text-2xl"></i>
+      </div>
+      <div>
+        <div class="text-xs font-bold truncate">Sumerechni...</div>
+        <div class="text-[11px] font-semibold text-blue-400 mt-0.5">106 500 so'm</div>
+      </div>
+    </div>
+
+    <!-- 86 almaz -->
+    <div class="bg-[#131929] border border-gray-800/80 rounded-2xl p-2.5 flex items-center gap-2 cursor-pointer hover:border-blue-500 transition">
+      <div class="w-10 h-10 flex items-center justify-center shrink-0">
+        <i class="fa-solid fa-gem text-cyan-400 text-2xl"></i>
+      </div>
+      <div>
+        <div class="text-xs font-bold flex items-center gap-1">
+          86 <i class="fa-solid fa-gem text-cyan-400 text-[10px]"></i>
+        </div>
+        <div class="text-[11px] font-semibold text-blue-400 mt-0.5">17 330 so'm</div>
+      </div>
+    </div>
+
+    <!-- 172 almaz -->
+    <div class="bg-[#131929] border border-gray-800/80 rounded-2xl p-2.5 flex items-center gap-2 cursor-pointer hover:border-blue-500 transition">
+      <div class="w-10 h-10 flex items-center justify-center shrink-0">
+        <i class="fa-solid fa-gem text-cyan-400 text-2xl"></i>
+      </div>
+      <div>
+        <div class="text-xs font-bold flex items-center gap-1">
+          172 <i class="fa-solid fa-gem text-cyan-400 text-[10px]"></i>
+        </div>
+        <div class="text-[11px] font-semibold text-blue-400 mt-0.5">34 000 so'm</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Pastki Ruxsat etilgan Sotib olish tugmasi -->
+  <div class="fixed bottom-0 left-0 right-0 p-4 bg-[#0b0e19]/90 backdrop-blur-md border-t border-gray-800/50 max-w-md mx-auto">
+    <button class="w-full bg-[#1e3a9e] hover:bg-blue-600 text-white font-bold py-3.5 rounded-full transition shadow-lg active:scale-95 text-sm">
+      Sotib olish
+    </button>
+  </div>
+
+  <script>
+    const tg = window.Telegram.WebApp;
+    tg.expand();
+  </script>
+</body>
+</html>
