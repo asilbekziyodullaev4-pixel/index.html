@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TG PREMIUM - Mini App</title>
+  <!-- Telegram Web App SDK -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome piktogrammalari -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { background-color: #0b0e19; color: white; font-family: sans-serif; }
+  </style>
+</head>
+<body class="p-4 pb-28 max-w-md mx-auto relative min-h-screen select-none">
+
+  <!-- Yuqori qism (Orqaga tugmasi) -->
+  <div class="flex items-center justify-between mb-4">
+    <button class="flex items-center gap-1.5 bg-[#151c2e] px-3 py-1.5 rounded-full text-sm font-medium border border-gray-800">
+      <i class="fa-solid fa-arrow-left text-xs"></i>
+      <span>Orqaga</span>
+    </button>
+  </div>
+
+  <!-- Banner Card -->
+  <div class="bg-[#131929] rounded-2xl p-3 border border-gray-800/80 flex items-center gap-3 mb-5">
+    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-900 to-purple-950 border border-amber-500/30 flex flex-col items-center justify-center shrink-0">
+      <i class="fa-solid fa-star text-amber-400 text-lg"></i>
+      <span class="text-[7px] font-black tracking-widest text-amber-300 -mt-0.5">PREMIUM</span>
+    </div>
+    <div>
+      <h2 class="font-bold text-base tracking-wide leading-tight">TG PREMIUM</h2>
+      <p class="text-[10px] text-gray-400 tracking-wider font-semibold uppercase mt-0.5">PREMIUM</p>
+    </div>
+  </div>
+
+  <!-- USERNAME Kiritish Bloki -->
+  <div class="mb-5">
+    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1 block px-1">@USERNAME</span>
+    <div class="flex gap-2">
+      <div class="relative flex-1">
+        <input 
+          type="text" 
+          placeholder="@username" 
+          class="w-full bg-[#131929] border border-gray-800 rounded-2xl py-3 px-4 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-blue-600 transition"
+        >
+      </div>
+      <button class="bg-[#1e295d] hover:bg-blue-700 text-blue-200 text-xs font-semibold px-5 py-3 rounded-2xl transition">
+        Tekshirish
+      </button>
+    </div>
+  </div>
+
+  <!-- MAHSULOTNI TANLANG -->
+  <div class="mb-5">
+    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2 block px-1">MAHSULOTNI TANLANG</span>
+    
+    <!-- Global Tag -->
+    <div class="mb-3">
+      <button class="bg-[#1d4ed8] text-white px-3.5 py-1.5 rounded-full text-[11px] font-semibold flex items-center gap-1.5 border border-blue-400/30">
+        <i class="fa-solid fa-globe text-xs"></i>
+        <span>Global</span>
+      </button>
+    </div>
+
+    <!-- Tariflar Grid (2 ustun) -->
+    <div class="grid grid-cols-2 gap-2.5">
+
+      <!-- 3 Oylik -->
+      <div class="bg-[#131929] border border-gray-800/80 hover:border-blue-500 rounded-2xl p-3 flex items-center gap-3 cursor-pointer transition">
+        <div class="w-10 h-10 rounded-xl bg-purple-950/40 flex items-center justify-center text-purple-400 shrink-0 relative">
+          <i class="fa-solid fa-gift text-xl"></i>
+          <span class="absolute bottom-0 right-0 text-[9px] font-extrabold text-purple-200 bg-purple-900/80 px-1 rounded-tl">3</span>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold">3 Oylik</h4>
+          <p class="text-[11px] font-semibold text-blue-400 mt-0.5">165 474 so'm</p>
+        </div>
+      </div>
+
+      <!-- 6 Oylik -->
+      <div class="bg-[#131929] border border-gray-800/80 hover:border-blue-500 rounded-2xl p-3 flex items-center gap-3 cursor-pointer transition">
+        <div class="w-10 h-10 rounded-xl bg-purple-950/40 flex items-center justify-center text-purple-400 shrink-0 relative">
+          <i class="fa-solid fa-gift text-xl"></i>
+          <span class="absolute bottom-0 right-0 text-[9px] font-extrabold text-purple-200 bg-purple-900/80 px-1 rounded-tl">6</span>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold">6 Oylik</h4>
+          <p class="text-[11px] font-semibold text-blue-400 mt-0.5">220 632 so'm</p>
+        </div>
+      </div>
+
+      <!-- 12 Oylik -->
+      <div class="bg-[#131929] border border-gray-800/80 hover:border-blue-500 rounded-2xl p-3 flex items-center gap-3 cursor-pointer transition">
+        <div class="w-10 h-10 rounded-xl bg-purple-950/40 flex items-center justify-center text-purple-400 shrink-0 relative">
+          <i class="fa-solid fa-gift text-xl"></i>
+          <span class="absolute bottom-0 right-0 text-[8px] font-extrabold text-purple-200 bg-purple-900/80 px-1 rounded-tl">12</span>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold">12 Oylik</h4>
+          <p class="text-[11px] font-semibold text-blue-400 mt-0.5">396 294 so'm</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Pastki Sotib olish tugmasi -->
+  <div class="fixed bottom-0 left-0 right-0 p-4 bg-[#0b0e19]/90 backdrop-blur-md border-t border-gray-800/50 max-w-md mx-auto">
+    <button class="w-full bg-[#1e3a9e] hover:bg-blue-600 text-white font-bold py-3.5 rounded-full transition shadow-lg active:scale-95 text-sm">
+      Sotib olish
+    </button>
+  </div>
+
+  <script>
+    const tg = window.Telegram.WebApp;
+    tg.expand();
+  </script>
+</body>
+</html>
