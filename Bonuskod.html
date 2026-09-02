@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bonus kodi - Mini App</title>
+  <!-- Telegram Web App SDK -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome piktogrammalari -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { background-color: #0b0e19; color: white; font-family: sans-serif; }
+  </style>
+</head>
+<body class="p-4 pb-28 max-w-md mx-auto relative min-h-screen select-none">
+
+  <!-- Yuqori qism (Orqaga va Balans) -->
+  <div class="flex items-center justify-between mb-3">
+    <button class="flex items-center gap-1.5 bg-[#151c2e] px-3 py-1.5 rounded-full text-sm font-medium border border-gray-800">
+      <i class="fa-solid fa-arrow-left text-xs"></i>
+      <span>Orqaga</span>
+    </button>
+
+    <div class="flex items-center gap-1 bg-[#151c2e] px-3 py-1.5 rounded-full border border-gray-800">
+      <div class="w-4 h-4 bg-amber-400 rounded-full"></div>
+      <span class="font-bold text-sm">0</span>
+    </div>
+  </div>
+
+  <!-- Profil ma'lumotlari -->
+  <div class="flex items-center gap-3 mb-6">
+    <div class="w-10 h-10 rounded-full overflow-hidden border border-yellow-500">
+      <img src="https://via.placeholder.com/40" alt="Avatar" class="w-full h-full object-cover">
+    </div>
+    <div>
+      <h2 class="font-bold text-base leading-tight">gift</h2>
+      <p class="text-xs text-gray-400">@Lemineus</p>
+    </div>
+  </div>
+
+  <!-- Sarlavha -->
+  <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-3 block px-1">Bonus kodi</span>
+
+  <!-- Promokod Kiritish Kartasi -->
+  <div class="bg-gradient-to-b from-[#131a2e] to-[#0f1424] rounded-3xl p-6 border border-gray-800/80 flex flex-col items-center shadow-xl">
+    
+    <!-- Ikonka (Kupón/Bonus belgilari) -->
+    <div class="w-20 h-20 bg-[#151b2e] rounded-2xl border border-gray-700/50 flex items-center justify-center mb-6 shadow-inner">
+      <i class="fa-solid fa-ticket text-amber-300 text-3xl transform -rotate-12"></i>
+    </div>
+
+    <!-- Input Maydoni -->
+    <div class="w-full mb-4">
+      <input 
+        type="text" 
+        placeholder="KODNI KIRITING" 
+        class="w-full bg-[#0d1222] border border-gray-800 rounded-xl py-3 px-4 text-center text-sm font-bold tracking-widest text-white placeholder-gray-500 focus:outline-none focus:border-blue-600 transition uppercase"
+      >
+    </div>
+
+    <!-- Faollashtirish Tugmasi -->
+    <button class="w-full bg-[#1e3a9e] hover:bg-blue-700 text-blue-100 font-semibold text-sm py-3 rounded-xl transition shadow-lg active:scale-95">
+      Faollashtirish
+    </button>
+
+  </div>
+
+  <!-- Pastki Menyu -->
+  <div class="fixed bottom-3 left-4 right-4 bg-[#121727]/90 backdrop-blur-md rounded-full p-1.5 border border-gray-800/80 flex justify-between items-center px-3 shadow-2xl">
+    <button class="flex flex-col items-center text-gray-400 hover:text-white text-[10px] px-2 py-1">
+      <i class="fa-solid fa-box text-sm mb-0.5"></i>
+      <span>Bosh sahifa</span>
+    </button>
+
+    <button class="flex flex-col items-center text-gray-400 hover:text-white text-[10px] px-2 py-1">
+      <i class="fa-solid fa-clock-rotate-left text-sm mb-0.5"></i>
+      <span>Tarix</span>
+    </button>
+
+    <button class="flex flex-col items-center text-gray-400 hover:text-white text-[10px] px-2 py-1">
+      <i class="fa-solid fa-user text-sm mb-0.5"></i>
+      <span>Sozlamalar</span>
+    </button>
+
+    <button class="flex flex-col items-center text-amber-400 text-[10px] px-2 py-1">
+      <i class="fa-solid fa-gamepad text-sm mb-0.5"></i>
+      <span>Ijaraga</span>
+    </button>
+  </div>
+
+  <script>
+    const tg = window.Telegram.WebApp;
+    tg.expand();
+  </script>
+</body>
+</html>
