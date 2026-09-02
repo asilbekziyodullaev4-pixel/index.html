@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sozlamalar - Mini App</title>
+  <!-- Telegram Web App SDK -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome piktogrammalari -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { background-color: #0b0e19; color: white; font-family: sans-serif; }
+  </style>
+</head>
+<body class="p-4 pb-28 max-w-md mx-auto relative min-h-screen select-none">
+
+  <!-- Yuqori qism (Orqaga tugmasi) -->
+  <div class="flex items-center justify-between mb-4">
+    <button class="flex items-center gap-1.5 bg-[#151c2e] px-3 py-1.5 rounded-full text-sm font-medium border border-gray-800">
+      <i class="fa-solid fa-arrow-left text-xs"></i>
+      <span>Orqaga</span>
+    </button>
+  </div>
+
+  <!-- Profil Vidjeti -->
+  <div class="bg-[#131929] rounded-2xl p-4 border border-gray-800/60 mb-5">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-12 h-12 rounded-full overflow-hidden border border-amber-500/80">
+        <img src="https://via.placeholder.com/50" alt="Avatar" class="w-full h-full object-cover">
+      </div>
+      <div>
+        <h2 class="font-bold text-base leading-tight">gift</h2>
+        <p class="text-xs text-blue-400">@Lemineus</p>
+        <div class="flex items-center gap-1 mt-0.5 text-[11px] text-gray-400 bg-[#1a2136] px-2 py-0.5 rounded-md w-fit">
+          <span>ID: 7751597129</span>
+          <i class="fa-regular fa-copy text-[10px] cursor-pointer hover:text-white"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Balans va Keshbek boxlari -->
+    <div class="grid grid-cols-2 gap-2">
+      <div class="bg-[#192136] p-2.5 rounded-xl border border-gray-800/50">
+        <span class="text-[10px] text-gray-400 uppercase font-semibold">Balans</span>
+        <div class="text-base font-bold">0 <span class="text-xs font-normal text-gray-300">so'm</span></div>
+      </div>
+      <div class="bg-[#192136] p-2.5 rounded-xl border border-gray-800/50">
+        <span class="text-[10px] text-gray-400 uppercase font-semibold">Keshbek</span>
+        <div class="text-base font-bold text-amber-400">0</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TELEFON RAQAMI -->
+  <div class="mb-5">
+    <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2 block px-1">Telefon raqami</span>
+    <button class="w-full bg-[#151a33] hover:bg-[#1c2345] border border-blue-900/40 rounded-2xl p-4 flex items-center gap-3 transition">
+      <div class="w-10 h-10 rounded-xl bg-blue-950/60 flex items-center justify-center text-blue-400">
+        <i class="fa-solid fa-phone"></i>
+      </div>
+      <span class="font-semibold text-sm text-blue-200">Telefon raqamini ulashish</span>
+    </button>
+  </div>
+
+  <!-- TIL -->
+  <div class="mb-5">
+    <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2 block px-1">Til</span>
+    <div class="bg-[#121626] p-1 rounded-full border border-gray-800/80 grid grid-cols-2">
+      <button class="bg-[#253386] text-white py-2 rounded-full text-xs font-semibold text-center transition">
+        O'zbekcha
+      </button>
+      <button class="text-gray-400 hover:text-white py-2 rounded-full text-xs font-semibold text-center transition">
+        Русский
+      </button>
+    </div>
+  </div>
+
+  <!-- XIZMATLAR -->
+  <div class="mb-6">
+    <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2 block px-1">Xizmatlar</span>
+    <div class="bg-[#131929] rounded-2xl border border-gray-800/60 divide-y divide-gray-800/50">
+      
+      <!-- Do'stlarni taklif qilish -->
+      <div class="p-3.5 flex items-center justify-between cursor-pointer hover:bg-gray-800/20 transition rounded-t-2xl">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-purple-950/50 flex items-center justify-center text-purple-400">
+            <i class="fa-solid fa-user-group"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold">Do'stlarni taklif qilish</h4>
+            <p class="text-[10px] text-gray-400">Do'stlaringizni taklif qilib bonus tangalar yutib oling</p>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right text-xs text-gray-500"></i>
+      </div>
+
+      <!-- Chegirma kodlar -->
+      <div class="p-3.5 flex items-center justify-between cursor-pointer hover:bg-gray-800/20 transition">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-950/50 flex items-center justify-center text-amber-400">
+            <i class="fa-solid fa-coins"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold">Chegirma kodlar</h4>
+            <p class="text-[10px] text-gray-400">Kashbek sarflab chegirma kodi yarating va keyingi xaridda foydalaning</p>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right text-xs text-gray-500"></i>
+      </div>
+
+      <!-- Qo'llab-quvvatlash -->
+      <div class="p-3.5 flex items-center justify-between cursor-pointer hover:bg-gray-800/20 transition">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-cyan-950/50 flex items-center justify-center text-cyan-400">
+            <i class="fa-regular fa-comment-dots"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold">Qo'llab-quvvatlash</h4>
+            <p class="text-[10px] text-gray-400">Savollar bo'yicha 24/7 yordam chati orqali bog'laning</p>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right text-xs text-gray-500"></i>
+      </div>
+
+      <!-- Animatsiyalarni kamaytirish (Toggle) -->
+      <div class="p-3.5 flex items-center justify-between">
+        <div class="flex items-center gap-3 pr-2">
+          <div class="w-10 h-10 rounded-xl bg-pink-950/50 flex items-center justify-center text-pink-400">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold">Animatsiyalarni kamaytirish</h4>
+            <p class="text-[10px] text-gray-400 leading-tight">Eski qurilmalarda yoki tezroq ishlash uchun animatsiyalarni o'chiring</p>
+          </div>
+        </div>
+        <label class="relative inline-flex items-center cursor-pointer shrink-0">
+          <input type="checkbox" class="sr-only peer">
+          <div class="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+        </label>
+      </div>
+
+      <!-- Tungi rejim (Toggle) -->
+      <div class="p-3.5 flex items-center justify-between rounded-b-2xl">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-950/40 flex items-center justify-center text-amber-300">
+            <i class="fa-regular fa-moon"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold">Tungi rejim</h4>
+            <p class="text-[10px] text-gray-400">Yorug' rejimga o'tish</p>
+          </div>
+        </div>
+        <label class="relative inline-flex items-center cursor-pointer shrink-0">
+          <input type="checkbox" class="sr-only peer">
+          <div class="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+        </label>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Pastki Menyu (Sozlamalar tugmasi faol) -->
+  <div class="fixed bottom-3 left-4 right-4 bg-[#121727]/90 backdrop-blur-md rounded-full p-1.5 border border-gray-800/80 flex justify-between items-center px-3 shadow-2xl">
+    <button class="flex flex-col items-center text-gray-400 hover:text-white text-[10px] px-2 py-1">
+      <i class="fa-solid fa-box text-sm mb-0.5"></i>
+      <span>Bosh sahifa</span>
+    </button>
+
+    <button class="flex flex-col items-center text-gray-400 hover:text-white text-[10px] px-2 py-1">
+      <i class="fa-solid fa-clock-rotate-left text-sm mb-0.5"></i>
+      <span>Tarix</span>
+    </button>
+
+    <!-- Faol Tugma (Sozlamalar) -->
+    <button class="flex items-center gap-2 bg-[#253386] text-white px-4 py-2 rounded-full text-xs font-bold">
+      <i class="fa-solid fa-user text-sm"></i>
+      <span>Sozlamalar</span>
+    </button>
+
+    <button class="flex flex-col items-center text-amber-400 text-[10px] px-2 py-1">
+      <i class="fa-solid fa-gamepad text-sm mb-0.5"></i>
+      <span>Ijaraga</span>
+    </button>
+  </div>
+
+  <script>
+    const tg = window.Telegram.WebApp;
+    tg.expand();
+  </script>
+</body>
+</html>
